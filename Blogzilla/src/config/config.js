@@ -9,7 +9,7 @@ const config = {
 
     appwriteCollectionId: String(import.meta.env.VITE_APPWRITE_COLLECTION_ID),
 
-    appwritebucketId: String(import.meta.env.VITE_APPWRITE_BUCKET_ID),
+    appwriteBucketId: String(import.meta.env.VITE_APPWRITE_BUCKET_ID),
 }
 
 
