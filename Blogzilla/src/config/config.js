@@ -1,4 +1,4 @@
-// it is a better way to acces .env variables file 
+// it is a better way to acces .env variables file to store them all at one place and then access them anywhere from here.
 
 const config = {
     appwriteUrl: String(import.meta.env.VITE_APPWRITE_ENDPOINT),
