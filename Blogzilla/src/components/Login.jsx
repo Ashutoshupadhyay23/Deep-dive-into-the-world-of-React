@@ -64,7 +64,7 @@ function Login() {
             <form onSubmit={handleSubmit(login)} className='mt-8'>
                 <div className='space-y-5'>
 
-                    <input 
+                    <Input 
                      label="Email:"
                      placeholder='Enter your email'
                      type='email'
@@ -89,9 +89,9 @@ function Login() {
                         })}
                     />
 
-                    <button className='w-full' type='submit'>
+                    <Button className='w-full' type='submit'>
                         Sign in
-                    </button>
+                    </Button>
 
                 </div>
             </form>

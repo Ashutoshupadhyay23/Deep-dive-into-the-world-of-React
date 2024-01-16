@@ -65,7 +65,7 @@ function Signup() {
             <form onSubmit={handleSubmit(create)}>
                 <div className='space-y-5'>
 
-                    <input
+                    <Input
                      label= 'Name'
                      placeholder='Enter your name'
                      {...register('name'), {
@@ -74,7 +74,7 @@ function Signup() {
 
                     />
 
-                    <input 
+                    <Input 
                      label="Email:"
                      placeholder='Enter your email'
                      type='email'
@@ -90,7 +90,7 @@ function Signup() {
                     
                     />
 
-                    <input
+                    <Input
                      label= 'Password'
                      type='password'
                      placeholder='Enter your password'
@@ -100,9 +100,9 @@ function Signup() {
                     
                     />
 
-                    <button className='w-full' type='submit'>
+                    <Button className='w-full' type='submit'>
                         Create Account
-                    </button>
+                    </Button>
 
                 </div>
             </form>
