@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, {useCallback, useEffect} from 'react'
 import {useForm} from 'react-hook-form'
 import { Button, Input, RTE, Select } from "../index";
@@ -82,11 +83,21 @@ function PostForm({post}) {
             subscription.unsubscribe()
         }
     }, [watch, slugTransform, setValue])
+=======
+import React from 'react'
+>>>>>>> 438504b096e160a26758b3759378eec148ff3f0e
 
 
 
 
+<<<<<<< HEAD
    
+=======
+function PostForm() {
+  return (
+    <div>PostForm</div>
+  )
+>>>>>>> 438504b096e160a26758b3759378eec148ff3f0e
 }
 
 export default PostForm
