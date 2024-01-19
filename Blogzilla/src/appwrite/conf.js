@@ -1,6 +1,6 @@
 // this conf file is for appwrite services 
 
-import config from "../config";
+import config from "../config/config";
 import {Client, ID, Databases, Storage, Query} from "appwrite";
 
 export class Service{

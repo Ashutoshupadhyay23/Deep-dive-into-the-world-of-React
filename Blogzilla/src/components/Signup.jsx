@@ -68,10 +68,10 @@ function Signup() {
                     <Input
                      label= 'Name'
                      placeholder='Enter your name'
-                     {...register('name'), {
+                     {...register('name', {
                         required: true
-                     }}
-
+                     })}   
+                     
                     />
 
                     <Input 
