@@ -66,7 +66,7 @@ function Signup() {
                 <div className='space-y-5'>
 
                     <Input
-                     label= 'Name'
+                     label= 'Name:'
                      placeholder='Enter your name'
                      {...register('name', {
                         required: true
@@ -91,7 +91,7 @@ function Signup() {
                     />
 
                     <Input
-                     label= 'Password'
+                     label= 'Password:'
                      type='password'
                      placeholder='Enter your password'
                      {...register('password', {
