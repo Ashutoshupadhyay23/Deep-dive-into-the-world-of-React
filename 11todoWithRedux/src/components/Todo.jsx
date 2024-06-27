@@ -8,7 +8,7 @@ function Todos() {
 
   return (
     <>
-      <div>My Todos</div>
+      <div className='mt-4'>Todos:</div>
 
       <ul className="list-none">
 
