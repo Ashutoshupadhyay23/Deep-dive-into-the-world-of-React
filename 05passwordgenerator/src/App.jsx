@@ -22,9 +22,13 @@ function App() {
       str += "0123456789"
     }
 
+    // if(numberAllowed) str += '0123456789'  //shorthand for upper condition
+
     if(charAllowed){
       str += "`~!@#$%^&*-_+=[]{}"
     }
+
+    // if(numberAllowed) str += '`~!@#$%^&*()_+=[]{}' //shorthand 
 
     for (let i = 1; i <= length; i++) {
       let char = Math.floor(Math.random() * str.length + 1)
