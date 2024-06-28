@@ -4,10 +4,10 @@ import useCurrencyInfo from './hooks/useCurrencyInfo';
 
 function App() {
   
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState('');
   const [from, setFrom] = useState("usd")
   const [to, setTo] = useState("inr")
-  const [convertedAmount, setConvertedAmount] = useState(0);
+  const [convertedAmount, setConvertedAmount] = useState('');
 
   const currencyInfo = useCurrencyInfo(from)
 
@@ -16,12 +16,18 @@ function App() {
   const swap = () => {
     setFrom(to)
     setTo(from)
-    setConvertedAmount(amount)
-    setAmount(convertedAmount)
+    setAmount(convertedAmount);
+    setConvertedAmount(amount);
   }
 
   const convert = () => {
-    setConvertedAmount(amount * currencyInfo[to]);
+    if (amount <= 0) {
+      alert("Please enter a valid amount greater than 0.");
+      return;
+    }
+    
+    const converted = amount * currencyInfo[to];
+    setConvertedAmount(Number(converted.toFixed(2)));
   }
 
   
@@ -46,7 +52,7 @@ function App() {
                 label="From"
                 amount={amount}
                 currencyOptions={options}
-                onCurrencyChange={(currency) => setAmount(amount)}
+                onCurrencyChange={(currency) => setFrom(currency)}
                 selectCurrency={from}
                 onAmountChange={(amount) => setAmount(amount)}
                   
@@ -68,7 +74,7 @@ function App() {
                 currencyOptions={options}
                 onCurrencyChange={(currency) => setTo(currency)}
                 selectCurrency={to}
-                amontDisable
+                amountDisable={true}
                     
               />
             </div>
