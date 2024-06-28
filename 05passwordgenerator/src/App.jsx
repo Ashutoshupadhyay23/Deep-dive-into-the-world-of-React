@@ -10,6 +10,7 @@ function App() {
   const [copy, setCopy] = useState("Copy");
 
   // useRef hook 
+  // to use useRef, we have to make variable of it 
   const passwordRef = useRef(null);
 
   // const passwordGenerator = useCallback(fn, dependencies[])   //usecallback takes a function and dependencies
@@ -45,6 +46,15 @@ function App() {
     passwordRef.current?.select();
     // passwordRef.current?.setSelectionRange(0,5);
     window.navigator.clipboard.writeText(password)
+
+    setTimeout(() => {
+      setCopy("Copy");
+      if (passwordRef.current) {
+        passwordRef.current.selectionStart = 0;
+        passwordRef.current.selectionEnd = 0; // Remove focus to deselect
+      }
+    }, 4000);
+
   }, [password]);
 
   useEffect(() => {
