@@ -11,7 +11,7 @@ function App() {
 
   const currencyInfo = useCurrencyInfo(from)
 
-  const options = Object.keys(currencyInfo)
+  const options = Object.keys(currencyInfo)   //Object.keys returns key of object from response data
 
   const swap = () => {
     setFrom(to)
