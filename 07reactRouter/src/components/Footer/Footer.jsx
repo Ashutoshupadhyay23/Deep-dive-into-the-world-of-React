@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 export default function Footer() {
     return (
@@ -20,14 +20,22 @@ export default function Footer() {
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">Resources</h2>
                             <ul className="text-gray-500 font-medium">
                                 <li className="mb-4">
-                                    <Link to="/" className="hover:underline">
-                                        Home
-                                    </Link>
+                                <NavLink to="/"
+                                    className={({isActive}) =>
+                                        `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-orange-700" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                                    }
+                                >
+                                    Home
+                                </NavLink>
                                 </li>
                                 <li>
-                                    <Link to="/about" className="hover:underline">
-                                        About
-                                    </Link>
+                                <NavLink to= "/about"
+                                    className={({isActive}) =>
+                                        `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-orange-700" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                                    }
+                                >
+                                    About
+                                </NavLink>
                                 </li>
                             </ul>
                         </div>
@@ -35,14 +43,13 @@ export default function Footer() {
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">Follow us</h2>
                             <ul className="text-gray-500 font-medium">
                                 <li className="mb-4">
-                                    <a
-                                        href="https://github.com/Ashutoshupadhyay23"
-                                        className="hover:underline"
-                                        target="_blank"
-                                        rel="noreferrer"
+                                    <NavLink to= "/github"
+                                        className={({isActive}) =>
+                                            `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-orange-700" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                                        }
                                     >
                                         Github
-                                    </a>
+                                    </NavLink>
                                 </li>
                                 <li>
                                     <Link to="/" className="hover:underline">
