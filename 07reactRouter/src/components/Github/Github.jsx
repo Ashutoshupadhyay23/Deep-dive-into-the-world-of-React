@@ -50,7 +50,7 @@ function Github() {
 
 export default Github
 
-// it is the another way to fetch api. it is the method of react router 
+// it is the another way to fetch api.(optimized way) it is the method of react router 
 export const githubInfoLoader = async () => {
     const resp = await fetch('https://api.github.com/users/ashutoshupadhyay23')
     return resp.json();

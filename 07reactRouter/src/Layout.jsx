@@ -9,6 +9,7 @@ function Layout() {
     <>
       <Header />
       <Outlet />
+      {/* header and footer will be the same and other component between them would change (if i use outlet below header and footer then the both upper component will be the same and others would change)  */}
       <Footer />
     </>
   )
