@@ -3,37 +3,41 @@ import UserContext from '../context/UserContext';
 
 function Login() {
 
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
-    const {setUser} = useContext(UserContext);
+  const {setUser} = useContext(UserContext);
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        setUser({username, password})
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (username.trim() !== '') {
+      setUser({ username, password });
+    } else {
+      alert('Please enter a username.');
     }
+  }
 
   return (
     <div>
-        <h2>Login</h2>
-        <input type="text"
-         value={username}
-         onChange={(e) => setUsername(e.target.value)}
-         placeholder='username' 
+      <h2>Login</h2>
+      <input type="text"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+        placeholder='username' 
 
+      />
+      {/* for extra space between these two fields  */}
+      {" "}  
+
+      <input type="text"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        placeholder='password'
         />
-        {/* for extra space between these two fields  */}
-        {" "}  
-
-        <input type="text"
-         value={password}
-         onChange={(e) => setPassword(e.target.value)}
-         placeholder='password'
-         />
-        {" "}
+      {" "}
 
 
-        <button onClick={handleSubmit}>Submit</button>
+      <button onClick={handleSubmit}>Submit</button>
     </div>
   )
 }
