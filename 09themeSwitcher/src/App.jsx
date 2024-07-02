@@ -11,6 +11,7 @@ function App() {
 
   const [themeMode, setThemeMode] = useState('light');
 
+  // if its functionality is not defined in context component then 
   //define the method as exact same name and it will automatically defines the function in themeProvider
 
   const lightTheme = () => {
@@ -24,8 +25,9 @@ function App() {
 
   useEffect(() => {
 
-    document.querySelector('html').classList.remove('light', 'dark')
-    document.querySelector('html').classList.add(themeMode)
+    const htmlElement = document.querySelector('html');
+    htmlElement.classList.remove('light', 'dark');
+    htmlElement.classList.add(themeMode);
     
   }, [themeMode])
 
@@ -35,10 +37,10 @@ function App() {
     <ThemeProvider value={{themeMode, lightTheme, darkTheme}}>
       <div className="flex flex-wrap min-h-screen items-center">
         <div className="w-full">
-            <div className="w-full max-w-sm mx-auto flex justify-end mb-4">
-              
-              <ThemeBtn />
-            </div>
+          <div className="w-full max-w-sm mx-auto flex justify-end mb-4">
+            
+            <ThemeBtn />
+          </div>
 
           <div className="w-full max-w-sm mx-auto">
 
