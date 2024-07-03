@@ -13,7 +13,7 @@ function TodoForm() {
             return
         }
 
-        addTodo({todo: todo, completed: false })
+        addTodo({todo: todo, completed: false }) //if field and value name is same like todo: todo, then we can simply do this < todo >
         setTodo("")
     }
 

@@ -10,7 +10,7 @@ function App() {
   const [todos, setTodos] = useState([]);
 
   const addTodo =(todo) => {
-    setTodos((prev) => [{id: Date.now(), ...todo} ,...prev])
+    setTodos((prev) => [{id: Date.now(), ...todo} ,...prev]) //prev gets the new array and then it converts to a new array
   }
 
   const updateTodo = (id, todo) => {
