@@ -38,7 +38,7 @@ function Signup() {
 
   return (
     <div className='flex items-center justify-center'>
-        <div className={`mx-auto w-full max-w-sm bg-gray-100 rounded-xl p-10 border border-black/10`}>
+        <div className={`mx-auto w-full max-w-sm bg-gray-100 rounded-xl p-7 border border-black/10`}>
 
             <div className='mb-2 flex justify-center'>
                 <span className='inline-block w-full max-w-[50px]'>
@@ -50,7 +50,7 @@ function Signup() {
                 Sign up to create an account
             </h2>
 
-            <p className="mt-2 text-center text-base text-black/60">
+            <p className="mt-2 mb-2 text-center text-base text-black/60">
                 Already have an account?&nbsp;
                 <Link
                     to="/login"

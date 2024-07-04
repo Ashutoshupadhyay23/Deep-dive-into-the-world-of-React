@@ -1,10 +1,10 @@
 import React from 'react'
-import logo from '../assets/b.jpg'
+import logo from '../assets/lo.png'
 
 function Logo({width = '100px'}) {
   return (
     <div>
-      <img src={logo} alt="logo" />
+      <img src={logo} className='rounded-full' alt="logo" />
     </div>
   )
 }
