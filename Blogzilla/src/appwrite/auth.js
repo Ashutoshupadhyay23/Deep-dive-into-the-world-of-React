@@ -52,7 +52,7 @@ export class AuthService{
 
     async logout() {
         try {
-            await this.account.deleteSessions()
+            await this.account.deleteSessions() //it deletes all sessions from everywhere
         } catch (error) {
             console.log('Appwrite service :: logOut :: error', error);
         }

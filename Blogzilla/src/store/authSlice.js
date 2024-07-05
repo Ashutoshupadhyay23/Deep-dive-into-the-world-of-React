@@ -1,4 +1,4 @@
-// authSlice (Slice) is good practice for naming contevention if we are using  create VITE project using redux/toolkit {same as create react project}
+// authSlice (Slice) is good practice for naming convention if we are using  create VITE project using redux/toolkit {same as create react project}
 
 // this store tracks user authentications if user is authenticated or not
 
