@@ -87,15 +87,18 @@ export class Service{
         }
     }
 
-    // to get all the post's we use getDocument
+    // to get all the post's we use listDocuments
     // quiries is for that if post's status is if active then return otherwise no
 
-    async getPosts(queries = [Query.equal('status', 'active')]) {
+    async getPosts(queries = [Query.equal('status', 'active')]) { //queries is just the variable name and key:- status, value:- active
         try {
             return await this.databases.listDocuments(
                 config.appwriteDatabaseId,
                 config.appwriteCollectionId,
                 queries
+                // [
+                //     Query.equal('status', 'active') // queries can be written like this as well
+                // ]
             )
         } catch (error) {
             console.log('Appwrite service :: getPosts :: error', error);

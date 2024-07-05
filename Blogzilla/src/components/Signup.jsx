@@ -13,7 +13,7 @@ function Signup() {
     const navigate = useNavigate()
     const [error, setError] = useState("")
     const dispatch = useDispatch()
-    const {register, handleSubmit} = useForm()
+    const {register, handleSubmit, reset} = useForm()
 
 
     const signup = async(data) => {
@@ -30,7 +30,11 @@ function Signup() {
                 }
             }
         } catch (error) {
-            setError(error.message)
+            setError(error.message);
+            setTimeout(() => {
+                setError('');
+                reset()
+            }, 5000);
         }
     }
 
@@ -38,7 +42,7 @@ function Signup() {
 
   return (
     <div className='flex items-center justify-center w-full py-8'>
-        <div className={`mx-auto w-full max-w-sm bg-gray-100 rounded-xl p-7 border border-black/10`}>
+        <div className={`mx-auto w-full max-w-sm bg-gray-300 rounded-xl p-7 border border-black/10`}>
 
             <div className='mb-2 flex justify-center'>
                 <span className='inline-block w-full max-w-[50px]'>
@@ -60,7 +64,7 @@ function Signup() {
                 </Link>
             </p>
 
-            {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
+            {error && <p className="text-red-600 mt-6 text-center">{error}</p>}
 
             <form onSubmit={handleSubmit(signup)}>
                 <div className='space-y-5'>
@@ -76,7 +80,7 @@ function Signup() {
 
                     <Input 
                      label="Email:"
-                     placeholder='Enter your email'
+                     placeholder='Email address'
                      type='email'
                      {...register('email', {
                         required: true,
@@ -93,7 +97,7 @@ function Signup() {
                     <Input
                      label= 'Password:'
                      type='password'
-                     placeholder='Enter your password'
+                     placeholder='Password'
                      {...register('password', {
                         required: true,
                      })}
