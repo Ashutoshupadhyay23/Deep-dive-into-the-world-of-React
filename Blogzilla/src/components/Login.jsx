@@ -14,9 +14,11 @@ function Login() {
     const dispatch = useDispatch()
     const {register, handleSubmit, reset} = useForm()
     const [error, setError] = useState()
+    const [isLoading, setIsLoading] = useState(false);
 
     const login = async(data) => {
         setError("")
+        setIsLoading(true);
         try {
             const session = await authService.logIn(data);
 
@@ -30,6 +32,8 @@ function Login() {
             }
         } catch (error) {
             setError(error.message);
+        } finally {
+            setIsLoading(false);
             setTimeout(() => {
                 setError('');
                 reset();
@@ -41,7 +45,7 @@ function Login() {
 
   return (
     <div className='flex items-center justify-center w-full py-8'>
-        <div className={`mx-auto w-full max-w-sm bg-gray-300 rounded-xl p-7 border border-black/10`}>
+        <div className={`mx-auto w-full max-w-sm bg-gray-300 rounded-xl p-7 border border-black/10 ${isLoading ? 'blur' : ''}`}>
 
             <div className='mb-2 flex justify-center'>
                 <span className='inline-block w-full max-w-[50px]'>
@@ -57,7 +61,7 @@ function Login() {
                 Don&apos;t have any account?&nbsp;
                 <Link
                     to="/signup"
-                    className="font-medium text-primary transition-all duration-200 hover:underline"
+                    className="font-medium text-blue-500 text-primary transition-all duration-200 hover:underline"
                 >
                     Sign Up
                 </Link>
@@ -66,6 +70,7 @@ function Login() {
             {error && <p className="text-red-600 mt-6 text-center">{error}</p>}
 
             <form onSubmit={handleSubmit(login)} className='mt-8'>
+            {/* handleSubmit is a method of hook form where we can use our method  */}
                 <div className='space-y-5'>
 
                     <Input 
