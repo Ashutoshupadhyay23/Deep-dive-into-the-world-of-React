@@ -1,9 +1,9 @@
-import React, { useId } from 'react'
+import React, { forwardRef, useId } from 'react'
 
 function Select({
     options,
     label,
-    className,
+    className = '',
     ...props
 
 }, ref) {
@@ -14,7 +14,9 @@ function Select({
 
   return (
     <div className='w-full'>
-        {label && <label htmlFor={id} className=''></label>}
+        {label && 
+            <label htmlFor={id} className=''>
+        </label>}
 
         <select
          {...props}
@@ -33,4 +35,4 @@ function Select({
   )
 }
 
-export default React.forwardRef(Select)
+export default forwardRef(Select)

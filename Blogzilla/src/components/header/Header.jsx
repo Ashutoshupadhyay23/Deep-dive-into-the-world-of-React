@@ -20,7 +20,7 @@ function Header() {
     {
       name: "Login",
       slug: "/login",
-      active: !authStatus,
+      active: !authStatus, //checks the auth if active then show if not then don't
     },
     {
       name: "Signup",
