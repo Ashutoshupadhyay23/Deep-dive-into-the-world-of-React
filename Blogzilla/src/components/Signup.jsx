@@ -17,7 +17,7 @@ function Signup() {
     const [isLoading, setIsLoading] = useState(false);
 
 
-    const signup = async(data) => {
+    const signUp = async(data) => {
         setError("")
         setIsLoading(true);
         try {
@@ -70,7 +70,7 @@ function Signup() {
 
             {error && <p className="text-red-600 mt-4 text-center">{error}</p>}
 
-            <form onSubmit={handleSubmit(signup)}>
+            <form onSubmit={handleSubmit(signUp)}>
                 <div className='space-y-5'>
 
                     <Input
